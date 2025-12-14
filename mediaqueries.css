@@ -1,0 +1,157 @@
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+  #hamburger-nav .theme-toggle {
+    right: 7.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: 46vw;
+    height: 46vw;
+    justify-content: center;
+    max-width: 220px;
+    max-height: 220px;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+  }
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+  .project-img {
+    width: 100%;
+    max-width: 260px;
+  }
+  article .icon {
+    width: 24px;
+    height: 24px;
+  }
+  .theme-toggle {
+    font-size: 1.1rem;
+  }
+}
+
+/* MOBILE TAP ANIMATION */
+
+@media (hover: none) {
+  .color-container {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .color-container:active {
+    transform: scale(0.97);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .color-container:active::after {
+    opacity: 1;
+  }
+  .color-container {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (hover: none) {
+  #profile .section__pic-container img:hover,
+  .about-pic:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (hover: none) {
+  .logo:hover {
+    transform: none;
+    opacity: 1;
+  }
+}

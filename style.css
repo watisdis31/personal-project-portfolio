@@ -28,6 +28,11 @@ a,
 
 /* DESKTOP NAV */
 
+#desktop-nav {
+  gap: 1rem;
+  position: relative;
+}
+
 nav,
 .nav-links {
   display: flex;
@@ -54,16 +59,48 @@ a {
 
 a:hover {
   color: grey;
-  text-decoration: underline;
-  text-underline-offset: 0.75rem;
-  text-decoration-color: rgb(181, 181, 181);
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    width 0.25s ease,
+    left 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a:active {
+  transform: translateY(1px);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  left: 0;
 }
 
 .logo {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .logo::after {
@@ -85,6 +122,8 @@ a:hover {
 
 #hamburger-nav {
   display: none;
+  position: relative;
+  z-index: 1000;
 }
 
 .hamburger-menu {
@@ -104,8 +143,10 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: var(--icon-color);
-  transition: background-color 0.3s ease;
+  background-color: black;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .menu-links {
@@ -115,8 +156,17 @@ a:hover {
   background-color: white;
   width: fit-content;
   max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 1001;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .menu-links a {
@@ -129,12 +179,44 @@ a:hover {
   transition: all 0.3 ease-in-out;
 }
 
+.menu-links a:active {
+  transform: scale(0.97);
+}
+
 .menu-links li {
-  list-style: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.menu-links li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.menu-links.open li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-links.open li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.menu-links.open li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.menu-links.open li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.menu-links.open li:nth-child(4) {
+  transition-delay: 0.2s;
 }
 
 .menu-links.open {
   max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hamburger-icon.open span:first-child {
@@ -539,13 +621,6 @@ body.dark {
   --link-color: #f8fafc;
 }
 
-.dark-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
 body.dark .icon {
   filter: brightness(0) invert(1);
 }
@@ -556,10 +631,16 @@ body.dark .project-img {
 
 body.dark .menu-links {
   background-color: var(--card-bg);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 body.dark .menu-links a {
   color: var(--text-color);
+}
+
+body.dark .menu-links li:not(:last-child) {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
 body.dark #profile .section__pic-container img {
@@ -579,45 +660,58 @@ body.dark article img[src*="checkmark"] {
 /* FORCE DARK MODE HAMBURGER COLOR */
 
 body.dark .hamburger-icon span {
-  background-color: #f8fafc !important;
+  background-color: var(--text-color);
 }
 
 /* DARK MODE TOGGLE (MINIMAL) */
 
-#desktop-nav {
-  gap: 1rem;
-}
-
-#desktop-nav .theme-toggle {
-  margin-left: 0.5rem;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  cursor: pointer;
-  padding: 0.4rem;
-  border-radius: 20%;
-  line-height: 1;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.theme-toggle {
+#desktop-nav .dark-toggle {
   position: absolute;
-  right: 1.5rem;
   top: 50%;
+  right: 2rem;
   transform: translateY(-50%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.theme-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+#desktop-nav .dark-toggle:hover {
+  transform: translateY(-50%) scale(1.05);
 }
 
-body.dark .theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+#hamburger-nav .dark-toggle {
+  margin-left: auto;
+}
+
+.dark-toggle {
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  background: #e4e4e4;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+  margin: 1rem;
+}
+
+.dark-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+body.dark .dark-toggle {
+  background: #333;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+body.dark .dark-toggle::before {
+  transform: translateX(20px);
 }
 
 /* NON-CLICKABLE ICONS */
@@ -629,13 +723,17 @@ article .icon {
 /* SUBTLE ANIMATIONS */
 
 .icon {
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 #socials-container .icon,
 .arrow {
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 #socials-container .icon:hover,
@@ -645,12 +743,14 @@ article .icon {
 }
 
 .btn {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 section {
@@ -687,7 +787,9 @@ section {
 /* PROFILE PIC HOVER ANIMATION */
 
 #profile .section__pic-container img {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 #profile .section__pic-container img:hover {
@@ -702,7 +804,9 @@ body.dark #profile .section__pic-container img:hover {
 /* ABOUT PIC HOVER ANIMATION */
 
 .about-pic {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .about-pic:hover {
@@ -712,4 +816,45 @@ body.dark #profile .section__pic-container img:hover {
 
 body.dark .about-pic:hover {
   box-shadow: 0 12px 30px rgba(255, 255, 255, 0.12);
+}
+
+/* TEXT REVEAL */
+
+.text-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.text-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-reveal.delay-1 {
+  transition-delay: 0.1s;
+}
+.text-reveal.delay-2 {
+  transition-delay: 0.2s;
+}
+.text-reveal.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/*TEXT REVEAL PER LETTER */
+
+.letter-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.letter-reveal.show span {
+  opacity: 1;
+  transform: translateY(0);
 }

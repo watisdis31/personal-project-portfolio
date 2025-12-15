@@ -6,6 +6,9 @@
     <title>STALK ME</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="icon" href="./assets/logo.svg" sizes="32x32" />
+    <link rel="icon" href="./assets/logo.svg" sizes="16x16" />
   </head>
   <body>
     <nav id="desktop-nav">
@@ -17,13 +20,13 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="dark-mode-toggle" class="theme-toggle">🌙</button>
+        <button class="dark-toggle" aria-label="Toggle dark mode"></button>
       </div>
     </nav>
     <nav id="hamburger-nav">
       <div class="logo">VE</div>
       <div style="display: flex; align-items: center; gap: 0.5rem">
-        <button id="dark-mode-toggle" class="theme-toggle">🌙</button>
+        <button class="dark-toggle" aria-label="Toggle dark mode"></button>
         <div class="hamburger-menu">
           <div class="hamburger-icon" onclick="toggleMenu()">
             <span></span>
@@ -45,8 +48,10 @@
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Vincentius Edward</h1>
-        <p class="section__text__p2">Upcoming Fullstack Developer</p>
+        <h1 class="title letter-reveal">Vincentius Edward</h1>
+        <p class="section__text__p2 letter-reveal">
+          Upcoming Fullstack Developer
+        </p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -143,7 +148,9 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Fullstack Development</h2>
+            <h2 class="experience-sub-title text-reveal delay-1">
+              Fullstack Development
+            </h2>
             <div class="article-container">
               <article>
                 <img
@@ -214,7 +221,7 @@
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Languages</h2>
+            <h2 class="experience-sub-title text-reveal delay-3">Languages</h2>
             <div class="article-container">
               <article>
                 <img
@@ -273,7 +280,7 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">
+            <h2 class="experience-sub-title project-title text-reveal delay-1">
               Personal Portfolio
             </h2>
             <div class="btn-container">
@@ -309,7 +316,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Hacktiv8 Hackathon</h2>
+            <h2 class="experience-sub-title project-title text-reveal delay-1">
+              Hacktiv8 Hackathon
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -343,7 +352,9 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <h2 class="experience-sub-title project-title text-reveal delay-1">
+              Project Three
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"

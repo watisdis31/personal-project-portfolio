@@ -12,6 +12,9 @@
   #desktop-nav {
     display: none;
   }
+  #desktop-nav .dark-toggle {
+    display: none;
+  }
   #hamburger-nav {
     display: flex;
   }
@@ -116,6 +119,14 @@
   }
   .theme-toggle {
     font-size: 1.1rem;
+  }
+  .text-reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .letter-reveal span {
+    opacity: 1;
+    transform: none;
   }
 }
 

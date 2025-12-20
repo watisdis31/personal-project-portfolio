@@ -238,17 +238,20 @@ body {
   font-family: bw2;
   font-size: 25px;
   border-radius: 6px;
+  box-sizing: border-box;
+  overflow: hidden; /* hard safety */
 }
 
 .trainer-contact {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+
+  max-width: 100%;
+  flex-wrap: wrap; /* allow wrap */
+  justify-content: flex-start;
 
   font-family: bw2;
-  font-size: 18px;
-
-  margin-top: 6px;
 }
 
 .contact-icon {
@@ -259,12 +262,24 @@ body {
   filter: brightness(0) invert(1); /* force white */
   animation: locationPulse 2.2s steps(2) infinite;
   flex-shrink: 0;
+  display: block;
+  align-self: center;
 }
 
 .contact-email {
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
   font-size: 21px;
+  line-height: 1;
   letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.contact-email::before {
+  content: "—";
+  opacity: 0.8;
 }
 
 .location-row {
@@ -498,6 +513,9 @@ body {
   overflow-y: auto;
   padding-right: 0; /* 🔥 DO NOT SHRINK CONTENT */
   box-sizing: border-box;
+  overscroll-behavior: contain; /* stops scroll chaining */
+  touch-action: pan-y; /* allow vertical only */
+  overflow-x: hidden;
 }
 
 /* Hide browser scrollbar */
@@ -888,7 +906,7 @@ body {
   .contact-email {
     font-size: 16px;
     line-height: 1;
-  white-space: nowrap;
+    white-space: nowrap;
   }
 
   .projects-container {
@@ -920,6 +938,21 @@ body {
     font-size: 15px;
     white-space: nowrap;
     opacity: 0.9;
+  }
+
+  .trainer-contact {
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .contact-icon {
+    margin-top: 1px; /* optical alignment for pixel icons */
+  }
+
+  .contact-email {
+    font-size: 16px;
+    padding-left: 2px;
   }
 }
 
@@ -963,5 +996,47 @@ body {
 
   .contact-email {
     font-size: 16px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .projects-container {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .projects-container {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  /* Prevent body scroll leakage on iPad */
+  body {
+    overscroll-behavior-y: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects-container {
+    overscroll-behavior-y: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .projects-container {
+    max-height: 320px; /* tighter clamp */
+  }
+
+  .pokedex-scroll-track {
+    height: calc(100% - 48px);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .projects-container {
+    overscroll-behavior-y: none;
   }
 }

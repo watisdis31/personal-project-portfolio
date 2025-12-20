@@ -43,10 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const trackHeight = track.clientHeight - thumb.clientHeight;
-    const snap = 8; // DS pixel snapping
+    const snap = 8;
 
-    const rawTop = (container.scrollTop / scrollHeight) * trackHeight;
-    const snappedTop = Math.round(rawTop / snap) * snap;
+    let rawTop = (container.scrollTop / scrollHeight) * trackHeight;
+    let snappedTop = Math.round(rawTop / snap) * snap;
+
+    // 🔒 HARD CLAMP (iPhone + iPad safe)
+    snappedTop = Math.max(0, Math.min(snappedTop, trackHeight));
 
     thumb.style.top = snappedTop + "px";
   }
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const step = 16; // BW2 scroll step
       container.scrollTop += e.deltaY > 0 ? step : -step;
     },
-    { passive: false }
+    { passive: false },
   );
 
   container.addEventListener("scroll", updateThumb);
@@ -88,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (!document.getElementById("trainer-panel")?.classList.contains("active")) return;
+    if (!document.getElementById("trainer-panel")?.classList.contains("active"))
+      return;
 
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       flipped = !flipped;
@@ -111,37 +115,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const THRESHOLD = 40;
 
-  flipWrapper.addEventListener("touchstart", (e) => {
-    if (!document.getElementById("trainer-panel")?.classList.contains("active")) {
-      return;
-    }
+  flipWrapper.addEventListener(
+    "touchstart",
+    (e) => {
+      if (
+        !document.getElementById("trainer-panel")?.classList.contains("active")
+      ) {
+        return;
+      }
 
-    const t = e.touches[0];
-    startX = t.clientX;
-    startY = t.clientY;
-    tracking = true;
-  }, { passive: true });
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      tracking = true;
+    },
+    { passive: true },
+  );
 
-  flipWrapper.addEventListener("touchend", (e) => {
-    if (!tracking) return;
-    tracking = false;
+  flipWrapper.addEventListener(
+    "touchend",
+    (e) => {
+      if (!tracking) return;
+      tracking = false;
 
-    const t = e.changedTouches[0];
-    const dx = t.clientX - startX;
-    const dy = t.clientY - startY;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
 
-    // Ignore vertical swipes
-    if (Math.abs(dy) > Math.abs(dx)) return;
-    if (Math.abs(dx) < THRESHOLD) return;
+      // Ignore vertical swipes
+      if (Math.abs(dy) > Math.abs(dx)) return;
+      if (Math.abs(dx) < THRESHOLD) return;
 
-    // 🔥 TOGGLE FLIP
-    flipWrapper.classList.toggle("flipped");
+      // 🔥 TOGGLE FLIP
+      flipWrapper.classList.toggle("flipped");
 
-    // Update dots if you still use them
-    const dots = document.querySelectorAll(".page-dot");
-    const flipped = flipWrapper.classList.contains("flipped");
+      // Update dots if you still use them
+      const dots = document.querySelectorAll(".page-dot");
+      const flipped = flipWrapper.classList.contains("flipped");
 
-    dots[0]?.classList.toggle("active", !flipped);
-    dots[1]?.classList.toggle("active", flipped);
-  }, { passive: true });
+      dots[0]?.classList.toggle("active", !flipped);
+      dots[1]?.classList.toggle("active", flipped);
+    },
+    { passive: true },
+  );
 })();

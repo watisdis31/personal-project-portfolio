@@ -3,439 +3,240 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STALK ME</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
-    <link rel="icon" href="./assets/logo.svg" sizes="32x32" />
-    <link rel="icon" href="./assets/logo.svg" sizes="16x16" />
+    <title>Vincentius Edward - Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/icons/favicon.png" sizes="32x32" />
+    <link rel="icon" href="images/icons/favicon.png" sizes="16x16" />
   </head>
+
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">VE</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="dark-toggle" aria-label="Toggle dark mode"></button>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">VE</div>
-      <div style="display: flex; align-items: center; gap: 0.5rem">
-        <button class="dark-toggle" aria-label="Toggle dark mode"></button>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/my-profile-pic.jpg" alt="Vince profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title letter-reveal">Vincentius Edward</h1>
-        <p class="section__text__p2 letter-reveal">
-          Upcoming Fullstack Developer
-        </p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button
-            class="btn btn-color-1"
-            onclick="location.href = './#contact'"
-          >
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My Linkedin profile"
-            class="icon"
-            onclick="
-              window.open(
-                'https://www.linkedin.com/in/vincentius-edward-8905509a/',
-                '_blank',
-              )
-            "
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="window.open('https://github.com/watisdis31', '_blank')"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-me.jpg"
-            alt="me with the GOAT"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>
-                4th week currently <br />Hacktiv8 Fullstack Developer Course
-              </p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>S.Bns. Bachelors Degree <br />M.Dl. Dragonlink Master</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              I'm learning to become a fullstack developer, this website is my
-              one of my own personal project about myself and my portfolio, I
-              will be updating my personal projects on my Projects page if you
-              want to check it out. I used this layout and followed the tutorial
-              on YouTube by "howtobecomeadeveloper". Other skills that I have
-              outside of coding are: able to speak 日本語, somewhat fluent in
-              english, I can show you lots of dragonlink combo, and I made
-              -billion numbers in Warframe using Voruna.
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href = '#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title text-reveal delay-1">
-              Fullstack Development
-            </h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Beginner</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Beginner</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SASS</h3>
-                  <p>WTF is that?</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Javascript</h3>
-                  <p>Still a lil bit dumb</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>The Helly?</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Bruh what?</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title text-reveal delay-3">Languages</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Bahasa Indonesia</h3>
-                  <p>Mother tongue</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>English</h3>
-                  <p>Fluent by self taught</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>日本語</h3>
-                  <p>N3 for now</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href = '#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.webp"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title text-reveal delay-1">
-              Personal Portfolio
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://github.com/watisdis31/personal-project-portfolio',
-                    '_blank',
-                  )
-                "
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://watisdis.netlify.app',
-                    '_blank',
-                  )
-                "
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.webp"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title text-reveal delay-1">
-              Hacktiv8 Hackathon
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://github.com/dinaadru/Kelompok1-Hackathon',
-                    '_blank',
-                  )
-                "
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://github.com/dinaadru/Kelompok1-Hackathon',
-                    '_blank',
-                  )
-                "
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title text-reveal delay-1">
-              Project Three
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://github.com/watisdis31/personal-project-portfolio',
-                    '_blank',
-                  )
-                "
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="
-                  window.open(
-                    'https://github.com/watisdis31/personal-project-portfolio',
-                    '_blank',
-                  )
-                "
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href = '#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:vincentiusedward31@gmail.com"
-              >vincentiusedward31@gmail.com</a
-            >
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="linkedin icon"
-            class="icon contact-icon"
-          />
-          <p>
-            <a
-              href="https://www.linkedin.com/in/vincentius-edward-8905509a/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+    <div id="grid-bg"></div>
+
+    <div class="main-container d-flex flex-column align-items-center">
+      <!-- MENU -->
+      <nav id="ds-menu" class="horizontal-menu d-flex gap-2">
+        <button class="menu-btn active" data-target="trainer-panel">
+          <span class="pokeball"></span> TRAINER CARD
+        </button>
+        <button class="menu-btn" data-target="projects-panel">
+          <span class="pokeball"></span> PROJECTS
+        </button>
       </nav>
-      <p>Copyright &#169; 2025 Vincentius Edward. All Rights Reserved</p>
-    </footer>
-    <script src="script.js"></script>
+
+      <section id="screens">
+        <!-- TRAINER PANEL -->
+        <div class="panel active" id="trainer-panel">
+          <div class="trainer-flip-wrapper" id="trainerFlip">
+            <!-- FRONT (YOUR EXISTING CARD, UNCHANGED) -->
+            <div class="trainer-card face front">
+              <div class="trainer-header">
+                <h2>TRAINER CARD</h2>
+                <span class="trainer-id-header">69067</span>
+              </div>
+
+              <div class="trainer-main d-flex">
+                <div class="profile-container">
+                  <img src="images/profile.webp" class="profile-pic-square" />
+                </div>
+
+                <div class="trainer-info">
+                  <p class="info-label">NAME</p>
+                  <p class="info-value">Vincentius Edward</p>
+
+                  <p class="info-label">CODING LANGUAGES</p>
+                  <p class="info-value">
+                    <span class="arrow">●</span>
+                    HTML / CSS / JS / ReactJS / NodeJS
+                  </p>
+
+                  <p class="info-label">SOCIALS</p>
+                  <p class="info-value social-icons">
+                    <img
+                      src="images/icons/instagram.png"
+                      alt="instagram"
+                      onclick="
+                        window.open(
+                          'https://www.instagram.com/v.edw31/',
+                          '_blank',
+                        )
+                      "
+                    />
+                    <img
+                      src="images/icons/github.png"
+                      alt="github"
+                      onclick="
+                        window.open('https://github.com/watisdis31', '_blank')
+                      "
+                    />
+                    <img
+                      src="images/icons/linkedin.png"
+                      alt="linkedin"
+                      onclick="
+                        window.open(
+                          'https://www.linkedin.com/in/vincentius-edward-8905509a/',
+                          '_blank',
+                        )
+                      "
+                    />
+                  </p>
+                </div>
+              </div>
+
+              <div class="trainer-footer">
+                <p>I am a fullstack developer student!</p>
+                <div class="trainer-contact">
+                  <img
+                    src="images/icons/gmail.png"
+                    alt="Email"
+                    class="contact-icon"
+                  />
+                  <span class="contact-email">
+                    — vincentiusedward31@gmail.com
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BACK (SAME CARD STYLE, DIFFERENT CONTENT) -->
+            <div class="trainer-card face back">
+              <div class="trainer-header">
+                <h2>ABOUT ME</h2>
+              </div>
+
+              <div class="trainer-info">
+                <p class="info-value">
+                  Currently a student at Hacktiv8 learning to become a Fullstack
+                  Developer. Day by day I'm learning something new.
+                </p>
+
+                <p class="info-value location-row">
+                  <img
+                    src="images/icons/location.png"
+                    class="location-icon"
+                    alt="Location"
+                  />
+                  Jakarta, Indonesia
+                </p>
+
+                <p class="info-label">LANGUAGE PROFICIENCY</p>
+                <p class="info-value">● Bahasa Indonesia — Mother Tongue</p>
+                <p class="info-value">● English — Fluent</p>
+                <p class="info-value">● Japanese — JLPT N3</p>
+
+                <a
+                  href="cv/Vincentius-Edward-CV.pdf"
+                  class="cv-btn"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  VIEW TRAINER DATA — CV
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="trainer-flip-control">
+            <span class="flip-arrow">◀</span>
+            <span class="flip-text">FLIP TRAINER CARD</span>
+            <span class="flip-arrow">▶</span>
+          </div>
+        </div>
+
+        <!-- PROJECTS PANEL (UNCHANGED STRUCTURE) -->
+        <div class="panel" id="projects-panel">
+          <div class="pokedex-panel">
+            <h2>Projects</h2>
+            <div class="projects-container">
+              <a
+                href="https://github.com/username/portfolio"
+                target="_blank"
+                class="project-entry-link"
+              >
+                <div class="project-entry">
+                  <div class="project-sprite">
+                    <img src="images/sprites/project1.gif" alt="project1" />
+                  </div>
+                  <div class="project-details">
+                    <div class="project-name">Pokémon Portfolio Website</div>
+                    <div class="project-type">HTML / CSS / JS / Bootstrap</div>
+                    <div class="project-description">
+                      Pokémon BW2 themed inspired portfolio website.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://github.com/username/portfolio"
+                target="_blank"
+                class="project-entry-link"
+              >
+                <div class="project-entry">
+                  <div class="project-sprite">
+                    <img src="images/sprites/project2.gif" alt="project2" />
+                  </div>
+                  <div class="project-details">
+                    <div class="project-name">Portfolio Website</div>
+                    <div class="project-type">HTML / CSS / JS</div>
+                    <div class="project-description">
+                      Pokémon BW2 themed portfolio website.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://github.com/username/portfolio"
+                target="_blank"
+                class="project-entry-link"
+              >
+                <div class="project-entry">
+                  <div class="project-sprite">
+                    <img src="images/sprites/project3.gif" alt="project3" />
+                  </div>
+                  <div class="project-details">
+                    <div class="project-name">Portfolio Website</div>
+                    <div class="project-type">HTML / CSS / JS</div>
+                    <div class="project-description">
+                      Pokémon BW2 themed portfolio website.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://github.com/username/portfolio"
+                target="_blank"
+                class="project-entry-link"
+              >
+                <div class="project-entry">
+                  <div class="project-sprite">
+                    <img src="images/sprites/project4.gif" alt="project4" />
+                  </div>
+                  <div class="project-details">
+                    <div class="project-name">Portfolio Website</div>
+                    <div class="project-type">HTML / CSS / JS</div>
+                    <div class="project-description">
+                      Pokémon BW2 themed portfolio website.
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="pokedex-scroll-track">
+              <div class="pokedex-scroll-thumb"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

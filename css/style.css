@@ -176,6 +176,7 @@ body {
 .trainer-header h2 {
   font-size: 18px;
   margin: 0;
+  cursor: default;
 }
 
 .trainer-id-header {
@@ -184,6 +185,7 @@ body {
   top: 0;
   font-family: bw2;
   font-size: 20px;
+  cursor: default;
 }
 .trainer-id-header::before {
   content: "ID No. ";
@@ -205,6 +207,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  cursor: default;
 }
 
 .info-label {
@@ -240,6 +243,10 @@ body {
   border-radius: 6px;
   box-sizing: border-box;
   overflow: hidden; /* hard safety */
+}
+
+.trainer-footer p {
+  cursor: default;
 }
 
 .trainer-contact {
@@ -439,6 +446,7 @@ body {
 .pokedex-panel h2 {
   font-family: "Press Start 2P", cursive;
   font-size: 30px;
+  cursor: default;
 }
 
 /* ================= CV BUTTON ================= */

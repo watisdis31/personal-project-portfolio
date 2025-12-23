@@ -30,7 +30,7 @@ no i will not explain)
 - html  
 - css  
 - javascript  
-- caffeine  
+- 1000mg of caffeine ☕
 
 ---
 

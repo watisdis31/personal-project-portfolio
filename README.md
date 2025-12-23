@@ -1,8 +1,54 @@
-# My own personal project for making my own portfolio inspired by pokemon bw2 theme for fun
+# 😎 my portfolio website
 
-<br>
+this is my website  
+it exists  
+i made it  
 
-## Live demo:
-https://watisdis.netlify.app
-<br>
-https://watisdis.vercel.app/
+---
+
+## 🌐 look at it
+
+- 👉 https://watisdis.netlify.app  
+- 👉 https://watisdis.vercel.app  
+
+(yes there are two  
+no i will not explain)
+
+---
+
+## 🤨 what’s inside
+
+- projects  
+- buttons  
+- colors  
+- code that somehow works  
+
+---
+
+## 🛠️ built with
+
+- html  
+- css  
+- javascript  
+- caffeine  
+
+---
+
+## 🐛 bugs
+
+- probably  
+- if you find one  
+- congrats 🎉  
+
+---
+
+## ⭐ please do this
+
+- star the repo  
+- click the website  
+- nod respectfully  
+
+---
+
+thank you for coming to my website  
+goodbye 👋

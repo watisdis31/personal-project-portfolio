@@ -24,7 +24,7 @@ body {
   background-image:
     linear-gradient(rgba(26, 26, 26, 0.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(26, 26, 26, 0.5) 1px, transparent 1px);
-  background-size: 12px 12px;
+  background-size: 21px 21px;
   animation: moveGrid 6s linear infinite;
   z-index: -1;
 }

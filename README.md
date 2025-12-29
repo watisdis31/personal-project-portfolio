@@ -7,7 +7,7 @@ i made it
 ---
 
 ## 🌐 look at it
-- 👉 https://watisdis.vercel.app
+- 👉 https://vedw31.vercel.app
   
 ---
 

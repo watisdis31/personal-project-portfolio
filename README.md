@@ -7,13 +7,8 @@ i made it
 ---
 
 ## 🌐 look at it
-
-- 👉 https://watisdis.netlify.app  
-- 👉 https://watisdis.vercel.app  
-
-(yes there are two  
-no i will not explain)
-
+- 👉 https://watisdis.vercel.app
+  
 ---
 
 ## 🤨 what’s inside
